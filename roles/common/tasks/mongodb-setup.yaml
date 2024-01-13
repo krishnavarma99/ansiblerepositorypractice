@@ -25,9 +25,9 @@
 
 
 - name: load catalogue data
-  ansible.builtin.command: mongo --host mongodb.76sdevops.website < /app/schema/catalogue.js
+  ansible.builtin.shell: mongo --host mongodb.76sdevops.website < /app/schema/catalogue.js
   when: component == "catalogue" and products_count.stdout == "0" # keep double quotes
 
 - name: load users data
-  ansible.builtin.command: mongo --host mongodb.76sdevops.website < /app/schema/catalogue.js
+  ansible.builtin.shell: mongo --host mongodb.76sdevops.website < /app/schema/catalogue.js
   when: component == "user" and products_count.stdout == "0" # keep double quotes  
