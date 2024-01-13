@@ -9,13 +9,13 @@
     state: present
   
 - name: "get the catalogue entries count"
-  ansible.builtin.shell:  mongo --host mongodb.76sdevops.website --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
+  ansible.builtin.shell: mongo --host mongodb.76sdevops.website --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
   register: products_count
   when: component == "catalogue"
 
 
 - name: "get the catalogue entries count"
-  ansible.builtin.shell:  mongo --host mongodb.76sdevops.website --quiet --eval 'db = db.getSiblingDB("users"); db.products.count()'
+  ansible.builtin.shell: mongo --host mongodb.76sdevops.website --quiet --eval 'db = db.getSiblingDB("users"); db.products.count()'
   register: products_count
   when: component == "user"
 
