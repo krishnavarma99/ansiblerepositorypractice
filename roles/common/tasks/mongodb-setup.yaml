@@ -19,9 +19,9 @@
   register: products_count
   when: component == "user"
 
-- name: print the count
-  ansible.builtin.debug:
-    msg: "products count: {{products_count}}"
+# - name: print the count
+#   ansible.builtin.debug:
+#     msg: "products count: {{products_count}}"
 
 
 - name: load catalogue data
